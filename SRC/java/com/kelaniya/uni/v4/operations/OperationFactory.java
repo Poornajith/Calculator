@@ -1,26 +1,23 @@
 package com.kelaniya.uni.v4.operations;
 
-import jdk.dynalink.Operation;
-
 //Factory design pattern
 public class OperationFactory {
     public Operation getInstance(String operator) {
 
-    Operation operation = null;
+        Operation operation = null;
 
         if (operator.equals("add")) {
-        operation= new AddOperation();
+            operation = new AddOperation();
 
-    } else if (operator.equals("sub")) {
-        operation = new SubOperation();
+        } else if (operator.equals("sub")) {
+            operation = new SubOperation();
 
-
-    }else if (operator.equals("div")) {
+        } else if (operator.equals("div")) {
             operation = new DivOperation();
 
-        }  else {
+        } else {
             operation = new MulOperation();
         }
-
+        return operation;
     }
 }
